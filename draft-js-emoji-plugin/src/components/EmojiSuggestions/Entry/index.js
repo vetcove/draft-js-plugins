@@ -38,7 +38,7 @@ export default class Entry extends Component {
     const className = this.props.isFocused ? theme.emojiSuggestionsEntryFocused : theme.emojiSuggestionsEntry;
     // short name to image url code steal from emojione source code
     const shortNameForImage = emojione.emojioneList[this.props.emoji].unicode[emojione.emojioneList[this.props.emoji].unicode.length - 1];
-    const allClasses = `${className} emojione-suggestion emojione-${shortNameForImage}`
+    const allClasses = `${className} emojione emojione-suggestion emojione-${shortNameForImage}`
     return (
       <div
         className={className}

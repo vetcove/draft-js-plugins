@@ -70,7 +70,7 @@ var Entry = function (_Component) {
       var className = this.props.isFocused ? theme.emojiSuggestionsEntryFocused : theme.emojiSuggestionsEntry;
       // short name to image url code steal from emojione source code
       var shortNameForImage = _emojione2.default.emojioneList[this.props.emoji].unicode[_emojione2.default.emojioneList[this.props.emoji].unicode.length - 1];
-      var allClasses = className + ' emojione-suggestion emojione-' + shortNameForImage;
+      var allClasses = className + ' emojione emojione-suggestion emojione-' + shortNameForImage;
       return _react2.default.createElement(
         'div',
         {
