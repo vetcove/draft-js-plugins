@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/draft-js-plugins/draft-js-plugins.git"
+    "url": "https://github.com/mkates/draft-js-plugins.git"
   },
   "main": "lib/index.js",
   "keywords": [

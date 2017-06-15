@@ -57,27 +57,20 @@ export default class Entry extends Component {
     const { cacheBustParam, imagePath, imageType, theme = {}, emoji } = this.props;
     // short name to image url code steal from emojione source code
     const shortNameForImage = emojione.emojioneList[emoji].unicode[emojione.emojioneList[emoji].unicode.length - 1];
-    const fullImagePath = `${imagePath}${shortNameForImage}.${imageType}${cacheBustParam}`;
     const { isFocused } = this.state;
+    const focus_unfocus_class = isFocused ?
+          theme.emojiSelectPopoverEntryFocused :
+          theme.emojiSelectPopoverEntry
 
     return (
       <button
-        className={isFocused ?
-          theme.emojiSelectPopoverEntryFocused :
-          theme.emojiSelectPopoverEntry}
+        className={focus_unfocus_class + ` emojione emojione-${shortNameForImage}`}
         onMouseDown={this.onMouseDown}
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
         onMouseUp={this.onMouseUp}
         ref={(element) => { this.button = element; }}
-      >
-        <img
-          src={fullImagePath}
-          className={theme.emojiSelectPopoverEntryIcon}
-          draggable={false}
-          role="presentation"
-        />
-      </button>
+      / >
     );
   }
 }
