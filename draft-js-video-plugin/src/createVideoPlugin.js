@@ -2,12 +2,9 @@ import decorateComponentWithProps from 'decorate-component-with-props';
 import addVideo from './video/modifiers/addVideo';
 import DefaultVideoComponent from './video/components/DefaultVideoComponent';
 import * as types from './video/constants';
-import videoStyles from './videoStyles.css';
-
-const defaultTheme = videoStyles;
 
 const videoPlugin = (config = {}) => {
-  const theme = config.theme ? config.theme : defaultTheme;
+  const theme = config.theme ? config.theme : {};
   let Video = config.videoComponent || DefaultVideoComponent;
   if (config.decorator) {
     Video = config.decorator(Video);
