@@ -126,7 +126,7 @@ var EmojiSelect = function (_Component) {
           },
           selectButtonContent
         ),
-        _react2.default.createElement(_Popover2.default, {
+        this.state.isOpen ? _react2.default.createElement(_Popover2.default, {
           cacheBustParam: cacheBustParam,
           imagePath: imagePath,
           imageType: imageType,
@@ -136,7 +136,7 @@ var EmojiSelect = function (_Component) {
           emojis: emojis,
           toneSelectOpenDelay: toneSelectOpenDelay,
           isOpen: this.state.isOpen
-        })
+        }) : null
       );
     }
   }]);

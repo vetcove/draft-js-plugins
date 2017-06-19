@@ -100,7 +100,7 @@ export default class EmojiSelect extends Component {
         >
           {selectButtonContent}
         </button>
-        <Popover
+        {this.state.isOpen ? <Popover
           cacheBustParam={cacheBustParam}
           imagePath={imagePath}
           imageType={imageType}
@@ -110,7 +110,7 @@ export default class EmojiSelect extends Component {
           emojis={emojis}
           toneSelectOpenDelay={toneSelectOpenDelay}
           isOpen={this.state.isOpen}
-        />
+        /> : null}
       </div>
     );
   }
