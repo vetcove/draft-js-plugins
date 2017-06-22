@@ -19,4 +19,5 @@ export default {
       url,
     };
   },
+  isValid: (url) => YOUTUBEMATCH_URL.test(url) || VIMEOMATCH_URL.test(url)
 };

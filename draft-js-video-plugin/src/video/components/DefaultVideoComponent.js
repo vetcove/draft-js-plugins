@@ -44,8 +44,9 @@ const DefaultVideoCompoent = ({
       </div>
     );
   }
-
-  return (<div className={theme.invalidVideoSrc}>invalid video source</div>);
+  
+  // Shouldn't be possible to get here because URL add callback should stop block creation if src not valid.
+  return null;
 };
 
 DefaultVideoCompoent.propTypes = {

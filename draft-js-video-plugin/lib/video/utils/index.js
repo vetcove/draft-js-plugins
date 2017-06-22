@@ -27,5 +27,8 @@ exports.default = {
       srcType: 'vimeo',
       url: url
     };
+  },
+  isValid: function isValid(url) {
+    return YOUTUBEMATCH_URL.test(url) || VIMEOMATCH_URL.test(url);
   }
 };
