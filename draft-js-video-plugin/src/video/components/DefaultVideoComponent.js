@@ -13,8 +13,8 @@ const getSrc = ({ src }) => {
     getVimeoSrc,
   } = utils;
   if (isYoutube(src)) {
-    const { srcID } = getYoutubeSrc(src);
-    return `${YOUTUBE_PREFIX}${srcID}`;
+    const { srcID, time='' } = getYoutubeSrc(src);
+    return `${YOUTUBE_PREFIX}${srcID}${time}`;
   }
   if (isVimeo(src)) {
     const { srcID } = getVimeoSrc(src);

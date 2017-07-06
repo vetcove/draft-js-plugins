@@ -5,11 +5,16 @@ export default {
   isVimeo: (url) => VIMEOMATCH_URL.test(url),
   getYoutubeSrc: (url) => {
     const id = url && url.match(YOUTUBEMATCH_URL)[1];
-    return {
+    const time_param = url.split('?')[1].split('&').filter((e) => e.substring(0,2) === 't=')
+    const ret = {
       srcID: id,
       srcType: 'youtube',
-      url,
+      url
     };
+    if (time_param.length > 0) { 
+      ret['time'] = '?' + time_param[0].replace('t=', 'start='); 
+    }
+    return ret;
   },
   getVimeoSrc: (url) => {
     const id = url.match(VIMEOMATCH_URL)[3];

@@ -14,11 +14,18 @@ exports.default = {
   },
   getYoutubeSrc: function getYoutubeSrc(url) {
     var id = url && url.match(YOUTUBEMATCH_URL)[1];
-    return {
+    var time_param = url.split('?')[1].split('&').filter(function (e) {
+      return e.substring(0, 2) === 't=';
+    });
+    var ret = {
       srcID: id,
       srcType: 'youtube',
       url: url
     };
+    if (time_param.length > 0) {
+      ret['time'] = '?' + time_param[0].replace('t=', 'start=');
+    }
+    return ret;
   },
   getVimeoSrc: function getVimeoSrc(url) {
     var id = url.match(VIMEOMATCH_URL)[3];

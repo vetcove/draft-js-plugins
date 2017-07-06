@@ -30,9 +30,11 @@ var getSrc = function getSrc(_ref) {
 
   if (isYoutube(src)) {
     var _getYoutubeSrc = getYoutubeSrc(src),
-        srcID = _getYoutubeSrc.srcID;
+        srcID = _getYoutubeSrc.srcID,
+        _getYoutubeSrc$time = _getYoutubeSrc.time,
+        time = _getYoutubeSrc$time === undefined ? '' : _getYoutubeSrc$time;
 
-    return '' + YOUTUBE_PREFIX + srcID;
+    return '' + YOUTUBE_PREFIX + srcID + time;
   }
   if (isVimeo(src)) {
     var _getVimeoSrc = getVimeoSrc(src),
