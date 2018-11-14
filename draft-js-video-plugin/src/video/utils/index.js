@@ -5,7 +5,10 @@ export default {
   isVimeo: (url) => VIMEOMATCH_URL.test(url),
   getYoutubeSrc: (url) => {
     const id = url && url.match(YOUTUBEMATCH_URL)[1];
-    const time_param = url.split('?')[1].split('&').filter((e) => e.substring(0,2) === 't=')
+    let time_param = []
+    if (url.split('?').length > 1) {
+      time_param = url.split('?')[1].split('&').filter((e) => e.substring(0,2) === 't=')
+    }
     const ret = {
       srcID: id,
       srcType: 'youtube',

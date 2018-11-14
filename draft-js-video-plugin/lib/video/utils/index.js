@@ -14,9 +14,12 @@ exports.default = {
   },
   getYoutubeSrc: function getYoutubeSrc(url) {
     var id = url && url.match(YOUTUBEMATCH_URL)[1];
-    var time_param = url.split('?')[1].split('&').filter(function (e) {
-      return e.substring(0, 2) === 't=';
-    });
+    var time_param = [];
+    if (url.split('?').length > 1) {
+      time_param = url.split('?')[1].split('&').filter(function (e) {
+        return e.substring(0, 2) === 't=';
+      });
+    }
     var ret = {
       srcID: id,
       srcType: 'youtube',
